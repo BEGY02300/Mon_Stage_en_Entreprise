@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Stage en Entreprise - Bilan</title>
+    <link rel="icon" type="image/x-icon" href="https://koyso.to/static/picture/logo_u.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #9b59b6;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: #8e44ad;
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .entreprise-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #9b59b6;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #e74c3c;
+        }
+
+        .metier-presentation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 1rem;
+        }
+
+        .metier-presentation h3 {
+            color: white;
+        }
+
+        .qualities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quality-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <h1>Mon Stage en Entreprise</h1>
+            <p class="subtitle">Bilan de mon stage à La Liste Entropie Logistique</p>
+            <div class="nav-buttons">
+                <button class="btn" onclick="showSection('presentation')">Présentation</button>
+                <button class="btn" onclick="showSection('stage')">Mon Stage</button>
+                <button class="btn" onclick="showSection('metier')">Métier Découvert</button>
+                <button class="btn" onclick="showSection('bilan')">Bilan Personnel</button>
+                <a href="https://begy02300.github.io/annexs_2025_2" class="btn btn-secondary" target="_blank">Voir l'Annexe</a>
+                <a href="https://organigramelaposte2025.netlify.app" class="btn btn-secondary" target="_blank">Voir l'Organigramme</a>
+            </div>
+        </header>
+
+        <!-- Section Présentation -->
+        <section id="presentation" class="section fade-in">
+            <h2>Présentation du Stage</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>📅 Contexte</h4>
+                    <p>Stage d'observation en milieu professionnel d'une durée de 5 jours dans le cadre de ma scolarité en classe de 3ème.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Objectifs</h4>
+                    <p>Découvrir le monde professionnel, observer différents métiers, et affiner mon projet d'orientation.</p>
+                </div>
+                <div class="card">
+                    <h4>👤 Mon Profil</h4>
+                    <p>Élève de 3ème passionné par la mécanique, l'impression 3D et les nouvelles technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Mon Stage -->
+        <section id="stage" class="section hidden">
+            <h2>L'Entreprise et Mes Missions</h2>
+            
+            <div class="entreprise-info">
+                <div class="info-item">
+                    <h4>🏢 Entreprise</h4>
+                    <p><strong>La Liste Entrepôt Logistique La Poste</strong></p>
+                    <p>Entreprise publique - Secteur logistique</p>
+                </div>
+                <div class="info-item">
+                    <h4>👥 Effectifs</h4>
+                    <p>300 salariés (150 hommes, 150 femmes)</p>
+                </div>
+                <div class="info-item">
+                    <h4>📍 Localisation</h4>
+                    <p>Soc sur du chant Marcel<br>80700 ROYE</p>
+                </div>
+                <div class="info-item">
+                    <h4>👨‍💼 Encadrement</h4>
+                    <p>Tuteur : Catherine Casamiesa (RRH)</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">📋 Mes Missions et Observations</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>🔧 Direction Technique</h4>
+                    <p>Observation des serveurs informatiques et des imprimantes 3D</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>📦 Gestion Logistique</h4>
+                    <p>Suivi des commandes et gestion des transferts</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>🛡️ Formation Sécurité</h4>
+                    <p>Apprentissage des gestes et mesures de sécurité, utilisation des EPI</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>💻 Applications Métier</h4>
+                    <p>Découverte des applications de transport et de gestion</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Métier -->
+        <section id="metier" class="section hidden">
+            <h2>Le Métier de Manager Technique</h2>
+            
+            <div class="metier-presentation">
+                <h3>👨‍💼 Interview de Julien Lellenou</h3>
+                <p><strong>Manager Technique - 18 ans d'expérience</strong></p>
+                
+                <div class="qualities-grid" style="margin-top: 2rem;">
+                    <div class="quality-item">
+                        <h4>🎓 Formation</h4>
+                        <p>Formation informatique TA</p>
+                    </div>
+                    <div class="quality-item">
+                        <h4>💪 Qualités</h4>
+                        <p>Respect, écoute, simplification</p>
+                    </div>
+                    <div class="quality-item">
+                        <h4>❤️ Points Positifs</h4>
+                        <p>Simplifier la vie des gens</p>
+                    </div>
+                    <div class="quality-item">
+                        <h4>📝 Points Négatifs</h4>
+                        <p>Charge administrative</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h3>💡 Pourquoi ce métier m'intéresse</h3>
+                <p>Ce métier allie compétences techniques et relationnelles, permettant de résoudre des problèmes concrets tout en aidant les utilisateurs.</p>
+            </div>
+        </section>
+
+        <!-- Section Bilan -->
+        <section id="bilan" class="section hidden">
+            <h2>Bilan Personnel et Projet</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>✅ Ce que j'ai découvert</h4>
+                    <p>La diversité des métiers dans une entreprise logistique et l'importance du travail d'équipe.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Mon projet professionnel</h4>
+                    <p><strong>BTA - Brevet d'Initiation Automatique</strong></p>
+                    <p>Orientation vers l'automatisme et l'informatique industrielle.</p>
+                </div>
+                <div class="card">
+                    <h4>🚀 Prochaines étapes</h4>
+                    <p>Rencontre avec le conseiller d'orientation pour choisir la formation adaptée.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; background: #e8f4f8; padding: 1.5rem; border-radius: 10px;">
+                <h3>📈 Compétences développées</h3>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li>Autonomie et prise d'initiative</li>
+                    <li>Respect des consignes de sécurité</li>
+                    <li>Communication en milieu professionnel</li>
+                    <li>Observation et analyse des processus</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Présentation de stage - Année scolaire 2025-2026</p>
+    </footer>
+
+    <script>
+        // Afficher une section et cacher les autres
+        function showSection(sectionId) {
+            // Cacher toutes les sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Afficher la section demandée
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('fade-in');
+            }
+        }
+
+        // Afficher la première section par défaut
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('presentation');
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer toutes les sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
